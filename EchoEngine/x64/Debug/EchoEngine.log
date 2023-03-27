@@ -1,6 +1,5 @@
 ﻿  main.cpp
-  vao.cpp
-D:\Programs\echo_game_engine\EchoEngine\vao.h(10,15): warning C4200: nonstandard extension used: zero-sized array in struct/union
-D:\Programs\echo_game_engine\EchoEngine\vao.h(10,15): message : This member will be ignored by a defaulted constructor or copy/move assignment operator
+D:\Programs\echo_game_engine\EchoEngine\main.cpp(186,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  texture.cpp
   Generating Code...
   EchoEngine.vcxproj -> D:\Programs\echo_game_engine\EchoEngine\x64\Debug\EchoEngine.exe
