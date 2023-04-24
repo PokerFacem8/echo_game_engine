@@ -10,8 +10,13 @@ GLFWwindow* window;
 
 // Default Resolution
 <<<<<<< HEAD
+<<<<<<< HEAD
 const unsigned int SCR_WIDTH = 1280;
 const unsigned int SCR_HEIGHT = 720;
+=======
+const unsigned int SCR_WIDTH = 800;
+const unsigned int SCR_HEIGHT = 600;
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
 =======
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
@@ -23,8 +28,12 @@ float lastFrame = 0.0f; // Time of last frame
 
 // Default Camera
 <<<<<<< HEAD
+<<<<<<< HEAD
 Camera camera = Camera(glm::vec3(0.0f, 0.5f, 10.0f));
 
+=======
+Camera camera = Camera(glm::vec3(0.0f, 0.0f, 3.0f));
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
 =======
 Camera camera = Camera(glm::vec3(0.0f, 0.0f, 3.0f));
 >>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
@@ -63,8 +72,12 @@ void mouse_callback(GLFWwindow* window, double xposIn, double yposIn)
     lastY = ypos;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (!glfwGetKey(window, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS)
         camera.ProcessMouseMovement(xoffset, yoffset);
+=======
+    camera.ProcessMouseMovement(xoffset, yoffset);
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
 =======
     camera.ProcessMouseMovement(xoffset, yoffset);
 >>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
@@ -74,7 +87,11 @@ void mouse_callback(GLFWwindow* window, double xposIn, double yposIn)
 This function will wait for a input
 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 void Window::processInput() {
+=======
+void Window::processInput(Shader shader) {
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
 =======
 void Window::processInput(Shader shader) {
 >>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
@@ -109,7 +126,11 @@ GLFWwindow* Window::generateWindow() {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Echo Engine", NULL, NULL); //This will instanciate the window
+=======
+    window = glfwCreateWindow(800, 600, "TicTacToe", NULL, NULL); //This will instanciate the window
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
 =======
     window = glfwCreateWindow(800, 600, "TicTacToe", NULL, NULL); //This will instanciate the window
 >>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
@@ -132,7 +153,11 @@ GLFWwindow* Window::generateWindow() {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     glViewport(0, 0, SCR_WIDTH, SCR_HEIGHT);//This will create the viewport for our main window
+=======
+    glViewport(0, 0, 800, 600);//This will create the viewport for our main window
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
 =======
     glViewport(0, 0, 800, 600);//This will create the viewport for our main window
 >>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1

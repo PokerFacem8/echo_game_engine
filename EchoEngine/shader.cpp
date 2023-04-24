@@ -1,5 +1,10 @@
 #include "shader.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
 =======
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -122,10 +127,13 @@ void Shader::setMat4(const std::string& name, glm::mat4 value)
     glUniformMatrix4fv(glGetUniformLocation(SHADER_ID, name.c_str()), 1, GL_FALSE, glm::value_ptr(value));
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 void Shader::setVet3(const std::string& name, float x, float y, float z)
 {
     glUniform3f(glGetUniformLocation(SHADER_ID, name.c_str()), x, y, z);
 }
+=======
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
 =======
 >>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1

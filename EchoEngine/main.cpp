@@ -1,7 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include <imgui.h>
 #include <imgui_impl_glfw.h>
 #include <imgui_impl_opengl3.h>
+=======
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
 =======
 >>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
 #include <iostream>
@@ -13,6 +16,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <camera.h>
+<<<<<<< HEAD
 <<<<<<< HEAD
 #include <model.h>
 #include <string>
@@ -26,6 +30,9 @@ double frames = 0;
 =======
 #include <texture.h>
 >>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
+=======
+#include <texture.h>
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
 
 void getFramesPerSecond(double lastTime, int nbFrames) {
 
@@ -35,8 +42,12 @@ void getFramesPerSecond(double lastTime, int nbFrames) {
     if (currentTime - lastTime >= 1.0) { // If last prinf() was more than 1 sec ago
         // printf and reset timer
 <<<<<<< HEAD
+<<<<<<< HEAD
         //std::cout << "%f ms/frame\n" << 1000.0 / double(nbFrames) << std::endl;
         frames = 1000.0 / double(nbFrames);
+=======
+        std::cout << "%f ms/frame\n" << 1000.0 / double(nbFrames) << std::endl;
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
 =======
         std::cout << "%f ms/frame\n" << 1000.0 / double(nbFrames) << std::endl;
 >>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
@@ -46,6 +57,11 @@ void getFramesPerSecond(double lastTime, int nbFrames) {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
 =======
 
 
@@ -55,6 +71,7 @@ int main(int argc, char** argv) {
     //Create Window 
     Window window = Window();
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     std::string cube = "D:/Programs/echo_game_engine/EchoEngine/Demo/Models/box/box.obj";
     std::string plane = "D:/Programs/echo_game_engine/EchoEngine/Demo/Models/Plane/plane.obj";
@@ -159,6 +176,8 @@ int main(int argc, char** argv) {
 
 
 =======
+=======
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
@@ -207,6 +226,9 @@ int main(int argc, char** argv) {
         -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
     };
 
+<<<<<<< HEAD
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
+=======
 >>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
 
 
@@ -214,11 +236,16 @@ int main(int argc, char** argv) {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     //Entity cubeVAO = Entity(vertices, (char*) "container.jpg");
     //Entity lightCubeVAO = Entity(vertices, (char*)"container.jpg");
 
     //TEXTURES 1
    /* Texture texture1 = Texture();
+=======
+    //TEXTURES 1
+    Texture texture1 = Texture();
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
 =======
     //TEXTURES 1
     Texture texture1 = Texture();
@@ -246,9 +273,15 @@ int main(int argc, char** argv) {
 
     //Generate VAO (Vertex Array Object) & VBO (Vertex Buffer Object)
 <<<<<<< HEAD
+<<<<<<< HEAD
     unsigned int VBO[3], VAO[3];//, EBOs[2];
     glGenVertexArrays(3, VAO);
     glGenBuffers(3, VBO);
+=======
+    unsigned int VBO, VAO;//, EBOs[2];
+    glGenVertexArrays(1, &VAO);
+    glGenBuffers(1, &VBO);
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
 =======
     unsigned int VBO, VAO;//, EBOs[2];
     glGenVertexArrays(1, &VAO);
@@ -259,8 +292,13 @@ int main(int argc, char** argv) {
 
     //firstQuad
 <<<<<<< HEAD
+<<<<<<< HEAD
     glBindVertexArray(VAO[0]);
     glBindBuffer(GL_ARRAY_BUFFER, VBO[0]);
+=======
+    glBindVertexArray(VAO);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
 =======
     glBindVertexArray(VAO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
@@ -274,6 +312,7 @@ int main(int argc, char** argv) {
     glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float))); //Texture
     glEnableVertexAttribArray(1);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     //Floor
@@ -313,6 +352,8 @@ int main(int argc, char** argv) {
     //Multiple Cubes
    /* glm::vec3 cubePositions[] = {
 =======
+=======
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
     glBindVertexArray(0);
 
     Shader shaderProgramYellow("vertexShader.txt", "fragmentShader.txt");
@@ -322,6 +363,9 @@ int main(int argc, char** argv) {
 
     //Multiple Cubes
     glm::vec3 cubePositions[] = {
+<<<<<<< HEAD
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
+=======
 >>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
         glm::vec3(0.0f,  0.0f,  0.0f),
         glm::vec3(2.0f,  5.0f, -15.0f),
@@ -334,7 +378,11 @@ int main(int argc, char** argv) {
         glm::vec3(1.5f,  0.2f, -1.5f),
         glm::vec3(-1.3f,  1.0f, -1.5f)
 <<<<<<< HEAD
+<<<<<<< HEAD
     };*/
+=======
+    };
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
 =======
     };
 >>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
@@ -342,6 +390,7 @@ int main(int argc, char** argv) {
     double lastTime = glfwGetTime();
     int nbFrames = 0;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 
@@ -364,6 +413,8 @@ int main(int argc, char** argv) {
         //Input
         window.processInput();
 =======
+=======
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
     //Game Loop
     while (!glfwWindowShouldClose(window.getWindow()))
     {
@@ -373,12 +424,16 @@ int main(int argc, char** argv) {
 
         //Input
         window.processInput(shaderProgramYellow);
+<<<<<<< HEAD
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
+=======
 >>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
 
         //Cound FPSs
         getFramesPerSecond(lastTime, nbFrames);
 
         //Rendering Commands
+<<<<<<< HEAD
 <<<<<<< HEAD
         glClearColor(0.1f, 0.1f, 0.1f, 1.0f); //Set the color that opengl will use to clear the color buffer
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); //Clear the color buffer
@@ -400,6 +455,8 @@ int main(int argc, char** argv) {
 
         lightPos = { (float)sin(glfwGetTime()), 1.0f, 2.0f };
 =======
+=======
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f); //Set the color that opengl will use to clear the color buffer
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); //Clear the color buffer
 
@@ -407,11 +464,15 @@ int main(int argc, char** argv) {
         // make sure to initialize matrix to identity matrix first
         glm::mat4 view = glm::mat4(1.0f);
         glm::mat4 projection = glm::mat4(1.0f);
+<<<<<<< HEAD
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
+=======
 >>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
 
 
         //Camera / View
         //view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
+<<<<<<< HEAD
 <<<<<<< HEAD
         //view = window.getCamera().GetViewMatrix();
 
@@ -419,16 +480,22 @@ int main(int argc, char** argv) {
 
         //projection = glm::perspective(glm::radians(45.0f), (float)window.getWindowWidth() / (float)window.getWindowHeight(), 0.1f, 100.0f);
 =======
+=======
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
         view = window.getCamera().GetViewMatrix();
 
 
 
         projection = glm::perspective(glm::radians(45.0f), (float)window.getWindowWidth() / (float)window.getWindowHeight(), 0.1f, 100.0f);
+<<<<<<< HEAD
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
+=======
 >>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
 
 
         // draw our first triangle
         //User Shader Program
+<<<<<<< HEAD
 <<<<<<< HEAD
         //shaderProgramYellow.use();
         //shaderProgramYellow.setFloat("mixValue", sin(glfwGetTime()));
@@ -451,6 +518,8 @@ int main(int argc, char** argv) {
         //Bind Vertex Array Object
         /*glBindVertexArray(VAO[0]); // seeing as we only have a single VAO there's no need to bind it every time, but we'll do so to keep things a bit more organized
 =======
+=======
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
         shaderProgramYellow.use();
         shaderProgramYellow.setFloat("mixValue", sin(glfwGetTime()));
         shaderProgramYellow.setInt("ourTexture", 0);
@@ -468,6 +537,9 @@ int main(int argc, char** argv) {
 
         //Bind Vertex Array Object
         glBindVertexArray(VAO); // seeing as we only have a single VAO there's no need to bind it every time, but we'll do so to keep things a bit more organized
+<<<<<<< HEAD
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
+=======
 >>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
 
         for (unsigned int i = 0; i < 10; i++)
@@ -483,6 +555,7 @@ int main(int argc, char** argv) {
         }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         
 
@@ -509,11 +582,16 @@ int main(int argc, char** argv) {
    
 
 =======
+=======
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
 
         //Draw Quad
         //glDrawArrays(GL_TRIANGLES, 0, 36);
 
 
+<<<<<<< HEAD
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
+=======
 >>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
 
         /*float timeValue = glfwGetTime();
@@ -533,6 +611,7 @@ int main(int argc, char** argv) {
         glDrawArrays(GL_TRIANGLES, 0, 3);*/
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         glm::vec3 lightColor;
         lightColor.x = sin(glfwGetTime() * 2.0f);
@@ -658,6 +737,8 @@ int main(int argc, char** argv) {
 
 =======
 >>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
+=======
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
         // glfw: swap buffers and poll IO events(keys pressed / released, mouse moved etc.)
         // -------------------------------------------------------------------------------
         glfwSwapBuffers(window.getWindow()); //Swap the front and back buffers
@@ -666,6 +747,7 @@ int main(int argc, char** argv) {
 
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     //Shutdown IMGUI
     ImGui_ImplOpenGL3_Shutdown();
@@ -687,12 +769,17 @@ int main(int argc, char** argv) {
     gridShader.deleteShader();
 
 =======
+=======
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
     // optional: de-allocate all resources once they've outlived their purpose:
     // ------------------------------------------------------------------------
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
     //glDeleteBuffers(2, EBOs);
     shaderProgramYellow.deleteShader();
+<<<<<<< HEAD
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
+=======
 >>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
 
     glfwTerminate(); //Clean all GLFW allocated resources

@@ -28,7 +28,10 @@ public:
     void setVec4(const std::string& name, float *value);
     void setMat4(const std::string& name, glm::mat4 value);
 <<<<<<< HEAD
+<<<<<<< HEAD
     void setVet3(const std::string& name, float x, float y, float z);
+=======
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
 =======
 >>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
 };

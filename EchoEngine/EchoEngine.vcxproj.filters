@@ -14,12 +14,15 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Filter Include="Source Files\imgui">
       <UniqueIdentifier>{19faa6b7-a182-43a5-ab1a-9b80c024b9ec}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Shaders">
       <UniqueIdentifier>{5612417a-caf3-4f94-8afd-bb20c574742b}</UniqueIdentifier>
     </Filter>
+=======
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
 =======
 >>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
   </ItemGroup>
@@ -36,6 +39,7 @@
     <ClCompile Include="shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <ClCompile Include="imgui\imgui_widgets.cpp">
       <Filter>Source Files\imgui</Filter>
@@ -66,6 +70,8 @@
     </ClCompile>
 =======
 >>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
+=======
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
     <ClCompile Include="texture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -83,6 +89,7 @@
     <ClInclude Include="camera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <ClInclude Include="imgui\imconfig.h">
       <Filter>Header Files</Filter>
@@ -119,11 +126,14 @@
     </ClInclude>
 =======
 >>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
+=======
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
     <ClInclude Include="texture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <Text Include="Shaders\1.colors.fs.txt">
       <Filter>Source Files\Shaders</Filter>
@@ -156,12 +166,17 @@
       <Filter>Source Files\Shaders</Filter>
     </Text>
 =======
+=======
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
     <None Include="vertexShader.txt">
       <Filter>Source Files</Filter>
     </None>
     <None Include="fragmentShader.txt">
       <Filter>Source Files</Filter>
     </None>
+<<<<<<< HEAD
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
+=======
 >>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
   </ItemGroup>
 </Project>

@@ -19,7 +19,11 @@ public:
     //Methods
     GLFWwindow* generateWindow();
 <<<<<<< HEAD
+<<<<<<< HEAD
     void processInput();
+=======
+    void processInput(Shader shader);
+>>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
 =======
     void processInput(Shader shader);
 >>>>>>> c2d3cefa12052f4f6b5f3aff4d307239784f74d1
