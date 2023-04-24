@@ -1,5 +1,0 @@
-﻿  main.cpp
-D:\Programs\echo_game_engine\EchoEngine\main.cpp(186,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  texture.cpp
-  Generating Code...
-  EchoEngine.vcxproj -> D:\Programs\echo_game_engine\EchoEngine\x64\Debug\EchoEngine.exe
