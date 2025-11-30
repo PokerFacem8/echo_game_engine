@@ -1,5 +1,0 @@
-E:/Personal/Projects/echo_game_engine/build/CMakeFiles/glad.dir
-E:/Personal/Projects/echo_game_engine/build/CMakeFiles/imgui.dir
-E:/Personal/Projects/echo_game_engine/build/CMakeFiles/EchoEngine.dir
-E:/Personal/Projects/echo_game_engine/build/CMakeFiles/ALL_BUILD.dir
-E:/Personal/Projects/echo_game_engine/build/CMakeFiles/ZERO_CHECK.dir
