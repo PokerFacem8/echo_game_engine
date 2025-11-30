@@ -8,6 +8,13 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <camera.h>
 #include <texture.h>
+#include <imgui.h>
+#include <imgui_impl_glfw.h>
+#include <imgui_impl_opengl3.h>
+
+
+
+
 
 void getFramesPerSecond(double lastTime, int nbFrames) {
 
@@ -28,6 +35,18 @@ int main(int argc, char** argv) {
 
     //Create Window 
     Window window = Window();
+
+    // Initialize ImGui AFTER creating window and OpenGL context
+    IMGUI_CHECKVERSION();
+    ImGui::CreateContext();
+    ImGuiIO& io = ImGui::GetIO(); (void)io;
+    
+    // Setup ImGui style
+    ImGui::StyleColorsDark();
+    
+    // Setup Platform/Renderer backends
+    ImGui_ImplGlfw_InitForOpenGL(window.getWindow(), true);
+    ImGui_ImplOpenGL3_Init("#version 330");
 
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
@@ -93,7 +112,7 @@ int main(int argc, char** argv) {
     texture1.setTextureOption(GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     
     //Load Data
-    texture1.setTextureData("container.jpg", GL_RGB);
+    texture1.setTextureData("assets/container.jpg", GL_RGB);
 
     //TEXTURES 2
     Texture texture2 = Texture();
@@ -101,7 +120,7 @@ int main(int argc, char** argv) {
     texture2.setTextureOption(GL_TEXTURE_WRAP_T, GL_REPEAT);
     texture2.setTextureOption(GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     texture2.setTextureOption(GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    texture2.setTextureData("awesomeface.png", GL_RGBA);
+    texture2.setTextureData("assets/awesomeface.png", GL_RGBA);
 
 
 
@@ -126,7 +145,7 @@ int main(int argc, char** argv) {
 
     glBindVertexArray(0);
 
-    Shader shaderProgramYellow("vertexShader.txt", "fragmentShader.txt");
+    Shader shaderProgramYellow("shaders/vertexShader.txt", "shaders/fragmentShader.txt");
 
     float currentMix = 0.2f;
 
@@ -152,11 +171,24 @@ int main(int argc, char** argv) {
     while (!glfwWindowShouldClose(window.getWindow()))
     {
    
-
-        
-
         //Input
         window.processInput(shaderProgramYellow);
+
+        // Start ImGui frame
+        ImGui_ImplOpenGL3_NewFrame();
+        ImGui_ImplGlfw_NewFrame();
+        ImGui::NewFrame();
+
+        // Create ImGui windows
+        ImGui::Begin("Debug Info");
+        ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 
+                    1000.0f / ImGui::GetIO().Framerate, 
+                    ImGui::GetIO().Framerate);
+        ImGui::End();
+
+        // Your existing rendering code...
+        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         //Cound FPSs
         getFramesPerSecond(lastTime, nbFrames);
@@ -235,6 +267,9 @@ int main(int argc, char** argv) {
         //Draw Triangles
         glDrawArrays(GL_TRIANGLES, 0, 3);*/
 
+        // Render ImGui (do this LAST, after your 3D rendering)
+        ImGui::Render();
+        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
         // glfw: swap buffers and poll IO events(keys pressed / released, mouse moved etc.)
         // -------------------------------------------------------------------------------
@@ -242,7 +277,15 @@ int main(int argc, char** argv) {
         glfwPollEvents(); //Check if some event is triggered
         //Note: The glClearColor function is a state-setting function and glClear is a state-using function in that it uses the current state to retrieve the clearing color from.
 
+
+
+
     }
+
+    // Cleanup ImGui
+    ImGui_ImplOpenGL3_Shutdown();
+    ImGui_ImplGlfw_Shutdown();
+    ImGui::DestroyContext();
 
     // optional: de-allocate all resources once they've outlived their purpose:
     // ------------------------------------------------------------------------

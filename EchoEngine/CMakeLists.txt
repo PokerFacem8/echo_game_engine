@@ -15,6 +15,23 @@ target_include_directories(glad PUBLIC external/glad/include)
 set(GLFW_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/external/glfw/include)
 set(GLFW_LIBRARY ${CMAKE_SOURCE_DIR}/external/glfw/lib-vc2022/glfw3.lib)
 
+# IMGUI
+add_library(imgui STATIC
+    external/imgui/imgui.cpp
+    external/imgui/imgui_draw.cpp
+    external/imgui/imgui_tables.cpp
+    external/imgui/imgui_widgets.cpp
+    external/imgui/imgui_demo.cpp
+    external/imgui/backends/imgui_impl_glfw.cpp
+    external/imgui/backends/imgui_impl_opengl3.cpp
+)
+target_include_directories(imgui PUBLIC
+    external/imgui
+    external/imgui/backends
+    ${GLFW_INCLUDE_DIR}
+    external/glad/include
+)
+
 # Source files
 set(SOURCES
     EchoEngine/main.cpp
@@ -37,7 +54,7 @@ add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 # Include directories
 target_include_directories(${PROJECT_NAME} PRIVATE
     ${CMAKE_SOURCE_DIR}/EchoEngine
-    ${CMAKE_SOURCE_DIR}/EchoEngine/glm
+    ${CMAKE_SOURCE_DIR}/external
     ${GLFW_INCLUDE_DIR}
 )
 
@@ -45,29 +62,30 @@ target_include_directories(${PROJECT_NAME} PRIVATE
 target_link_libraries(${PROJECT_NAME}
     glad
     ${GLFW_LIBRARY}
+    imgui
     opengl32
 )
 
 # Copy shader files to build directory
 add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        ${CMAKE_SOURCE_DIR}/EchoEngine/vertexShader.txt
-        $<TARGET_FILE_DIR:${PROJECT_NAME}>/vertexShader.txt
+        ${CMAKE_SOURCE_DIR}/EchoEngine/shaders/vertexShader.txt
+        $<TARGET_FILE_DIR:${PROJECT_NAME}>/shaders/vertexShader.txt
 )
 
 add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        ${CMAKE_SOURCE_DIR}/EchoEngine/fragmentShader.txt
-        $<TARGET_FILE_DIR:${PROJECT_NAME}>/fragmentShader.txt
+        ${CMAKE_SOURCE_DIR}/EchoEngine/shaders/fragmentShader.txt
+        $<TARGET_FILE_DIR:${PROJECT_NAME}>/shaders/fragmentShader.txt
 )
 
 # Copy texture files if they exist
 add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
         ${CMAKE_SOURCE_DIR}/EchoEngine/assets/container.jpg
-        $<TARGET_FILE_DIR:${PROJECT_NAME}>/container.jpg
+        $<TARGET_FILE_DIR:${PROJECT_NAME}>/assets/container.jpg
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
         ${CMAKE_SOURCE_DIR}/EchoEngine/assets/awesomeface.png
-        $<TARGET_FILE_DIR:${PROJECT_NAME}>/awesomeface.png
+        $<TARGET_FILE_DIR:${PROJECT_NAME}>/assets/awesomeface.png
     COMMENT "Copying resources..."
 )

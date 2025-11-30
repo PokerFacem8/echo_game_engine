@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "bin/MinSizeRel/EchoEngine.exe"
+			"path" : "bin/Debug/EchoEngine.exe"
 		},
 		{
-			"path" : "bin/MinSizeRel/EchoEngine.pdb"
+			"path" : "bin/Debug/EchoEngine.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -30,25 +30,25 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 35,
+				"line" : 52,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 45,
+				"line" : 62,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 52,
+				"line" : 70,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 38,
+				"line" : 55,
 				"parent" : 0
 			}
 		]
@@ -63,6 +63,10 @@
 		{
 			"backtrace" : 2,
 			"id" : "glad::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "imgui::@6890427a1f51a3e7e1df"
 		}
 	],
 	"compileGroups" : 
@@ -71,7 +75,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /GR /EHsc /O1 /Ob1 /DNDEBUG -std:c++17 -MD"
+					"fragment" : "/DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd"
 				}
 			],
 			"includes" : 
@@ -82,7 +86,7 @@
 				},
 				{
 					"backtrace" : 4,
-					"path" : "E:/Personal/Projects/echo_game_engine/EchoEngine/EchoEngine/glm"
+					"path" : "E:/Personal/Projects/echo_game_engine/EchoEngine/external"
 				},
 				{
 					"backtrace" : 4,
@@ -91,6 +95,14 @@
 				{
 					"backtrace" : 2,
 					"path" : "E:/Personal/Projects/echo_game_engine/EchoEngine/external/glad/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "E:/Personal/Projects/echo_game_engine/EchoEngine/external/imgui"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "E:/Personal/Projects/echo_game_engine/EchoEngine/external/imgui/backends"
 				}
 			],
 			"language" : "CXX",
@@ -118,6 +130,10 @@
 			"id" : "glad::@6890427a1f51a3e7e1df"
 		},
 		{
+			"backtrace" : 2,
+			"id" : "imgui::@6890427a1f51a3e7e1df"
+		},
+		{
 			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
 		}
 	],
@@ -127,11 +143,11 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/DWIN32 /D_WINDOWS /GR /EHsc /O1 /Ob1 /DNDEBUG -MD",
+				"fragment" : "/DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -MDd",
 				"role" : "flags"
 			},
 			{
-				"fragment" : "/machine:x64 /INCREMENTAL:NO",
+				"fragment" : "/machine:x64 /debug /INCREMENTAL",
 				"role" : "flags"
 			},
 			{
@@ -140,12 +156,17 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "MinSizeRel\\glad.lib",
+				"fragment" : "Debug\\glad.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
 				"fragment" : "E:\\Personal\\Projects\\echo_game_engine\\EchoEngine\\external\\glfw\\lib-vc2022\\glfw3.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "Debug\\imgui.lib",
 				"role" : "libraries"
 			},
 			{
@@ -169,6 +190,10 @@
 		{
 			"backtrace" : 2,
 			"fragment" : "E:/Personal/Projects/echo_game_engine/EchoEngine/external/glfw/lib-vc2022/glfw3.lib"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "imgui::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 2,
