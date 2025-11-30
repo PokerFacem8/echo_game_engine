@@ -1,0 +1,10 @@
+^E:\PERSONAL\PROJECTS\ECHO_GAME_ENGINE\ECHOENGINE\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SE:/Personal/Projects/echo_game_engine/EchoEngine -BE:/Personal/Projects/echo_game_engine/build --check-stamp-file E:/Personal/Projects/echo_game_engine/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

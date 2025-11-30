@@ -1,0 +1,10 @@
+^E:\PERSONAL\PROJECTS\ECHO_GAME_ENGINE\BUILD\CMAKEFILES\D830DEA9C3897DC7D039A7BB5DA4A0BA\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SE:/Personal/Projects/echo_game_engine/EchoEngine -BE:/Personal/Projects/echo_game_engine/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file E:/Personal/Projects/echo_game_engine/build/EchoEngine.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
