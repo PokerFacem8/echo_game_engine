@@ -1,33 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="E:\Personal\Projects\echo_game_engine\EchoEngine\EchoEngine\main.cpp">
+    <ClCompile Include="E:\Personal\Projects\echo_game_engine\EchoEngine\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Personal\Projects\echo_game_engine\EchoEngine\EchoEngine\shader.cpp">
+    <ClCompile Include="E:\Personal\Projects\echo_game_engine\EchoEngine\src\shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Personal\Projects\echo_game_engine\EchoEngine\EchoEngine\texture.cpp">
+    <ClCompile Include="E:\Personal\Projects\echo_game_engine\EchoEngine\src\texture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Personal\Projects\echo_game_engine\EchoEngine\EchoEngine\window.cpp">
+    <ClCompile Include="E:\Personal\Projects\echo_game_engine\EchoEngine\src\window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="E:\Personal\Projects\echo_game_engine\EchoEngine\EchoEngine\camera.h">
+    <ClInclude Include="E:\Personal\Projects\echo_game_engine\EchoEngine\src\camera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Personal\Projects\echo_game_engine\EchoEngine\EchoEngine\shader.h">
+    <ClInclude Include="E:\Personal\Projects\echo_game_engine\EchoEngine\src\shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Personal\Projects\echo_game_engine\EchoEngine\EchoEngine\texture.h">
+    <ClInclude Include="E:\Personal\Projects\echo_game_engine\EchoEngine\src\texture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Personal\Projects\echo_game_engine\EchoEngine\EchoEngine\window.h">
+    <ClInclude Include="E:\Personal\Projects\echo_game_engine\EchoEngine\src\window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Personal\Projects\echo_game_engine\EchoEngine\EchoEngine\stb_image.h">
+    <ClInclude Include="E:\Personal\Projects\echo_game_engine\EchoEngine\src\stb_image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

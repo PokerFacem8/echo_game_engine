@@ -34,18 +34,18 @@ target_include_directories(imgui PUBLIC
 
 # Source files
 set(SOURCES
-    EchoEngine/main.cpp
-    EchoEngine/shader.cpp
-    EchoEngine/texture.cpp
-    EchoEngine/window.cpp
+    src/main.cpp
+    src/shader.cpp
+    src/texture.cpp
+    src/window.cpp
 )
 
 set(HEADERS
-    EchoEngine/camera.h
-    EchoEngine/shader.h
-    EchoEngine/texture.h
-    EchoEngine/window.h
-    EchoEngine/stb_image.h
+    src/camera.h
+    src/shader.h
+    src/texture.h
+    src/window.h
+    src/stb_image.h
 )
 
 # Executable
@@ -53,7 +53,7 @@ add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
 # Include directories
 target_include_directories(${PROJECT_NAME} PRIVATE
-    ${CMAKE_SOURCE_DIR}/EchoEngine
+    ${CMAKE_SOURCE_DIR}/src
     ${CMAKE_SOURCE_DIR}/external
     ${GLFW_INCLUDE_DIR}
 )
@@ -69,23 +69,23 @@ target_link_libraries(${PROJECT_NAME}
 # Copy shader files to build directory
 add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        ${CMAKE_SOURCE_DIR}/EchoEngine/shaders/vertexShader.txt
+        ${CMAKE_SOURCE_DIR}/src/shaders/vertexShader.txt
         $<TARGET_FILE_DIR:${PROJECT_NAME}>/shaders/vertexShader.txt
 )
 
 add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        ${CMAKE_SOURCE_DIR}/EchoEngine/shaders/fragmentShader.txt
+        ${CMAKE_SOURCE_DIR}/src/shaders/fragmentShader.txt
         $<TARGET_FILE_DIR:${PROJECT_NAME}>/shaders/fragmentShader.txt
 )
 
 # Copy texture files if they exist
 add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        ${CMAKE_SOURCE_DIR}/EchoEngine/assets/container.jpg
+        ${CMAKE_SOURCE_DIR}/src/assets/container.jpg
         $<TARGET_FILE_DIR:${PROJECT_NAME}>/assets/container.jpg
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        ${CMAKE_SOURCE_DIR}/EchoEngine/assets/awesomeface.png
+        ${CMAKE_SOURCE_DIR}/src/assets/awesomeface.png
         $<TARGET_FILE_DIR:${PROJECT_NAME}>/assets/awesomeface.png
     COMMENT "Copying resources..."
 )

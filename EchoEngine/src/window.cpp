@@ -89,7 +89,7 @@ GLFWwindow* Window::generateWindow() {
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); //This is required for macos
 
 
-    window = glfwCreateWindow(800, 600, "TicTacToe", NULL, NULL); //This will instanciate the window
+    window = glfwCreateWindow(800, 600, "EchoEngine", NULL, NULL); //This will instanciate the window
 
     if (window == NULL) //Check if window was created successfull
     {
