@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug EchoEngine",
+            "name": "Debug EchoEngine (Windows)",
             "type": "cppvsdbg",
             "request": "launch",
             "program": "${workspaceFolder}/EchoEngine/build/bin/Debug/EchoEngine.exe",
@@ -14,7 +14,7 @@
             "preLaunchTask": "CMake: build"
         },
         {
-            "name": "Run EchoEngine (No Debug)",
+            "name": "Run EchoEngine (Windows - No Debug)",
             "type": "cppvsdbg",
             "request": "launch",
             "program": "${workspaceFolder}/EchoEngine/build/bin/Debug/EchoEngine.exe",
@@ -23,6 +23,31 @@
             "cwd": "${workspaceFolder}/EchoEngine/build/bin/Debug",
             "environment": [],
             "console": "externalTerminal"
+        },
+        {
+            "name": "Debug EchoEngine (macOS)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/EchoEngine/build/bin/EchoEngine",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/EchoEngine/build/bin",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "CMake Build"
+        },
+        {
+            "name": "Run EchoEngine (macOS - No Debug)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/EchoEngine/build/bin/EchoEngine",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/EchoEngine/build/bin",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb"
         }
     ]
 }

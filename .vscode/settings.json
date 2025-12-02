@@ -1,4 +1,7 @@
 {
     "cmake.sourceDirectory": "${workspaceFolder}/EchoEngine",
-    "cmake.buildDirectory": "${workspaceFolder}/EchoEngine/build"
+    "cmake.buildDirectory": "${workspaceFolder}/EchoEngine/build",
+    "code-runner.executorMap": {
+        "cpp": "cd $dir && cmake --build ../build && ../build/bin/EchoEngine"
+    }
 }
