@@ -1,1 +1,6 @@
 EchoEngine/build/*
+.DS_Store
+EchoEngine/external/.DS_Store
+EchoEngine/external/glfw/.DS_Store
+EchoEngine/external/glfw/include/.DS_Store
+EchoEngine/src/imgui.ini
