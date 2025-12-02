@@ -36,6 +36,9 @@ int main(int argc, char** argv) {
     //Create Window 
     Window window = Window();
 
+    // Enable depth testing (required for 3D)
+    glEnable(GL_DEPTH_TEST);
+
     // Initialize ImGui AFTER creating window and OpenGL context
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
