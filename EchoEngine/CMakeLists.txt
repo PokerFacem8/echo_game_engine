@@ -11,9 +11,15 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 add_library(glad STATIC external/glad/src/glad.c)
 target_include_directories(glad PUBLIC external/glad/include)
 
-# GLFW
-set(GLFW_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/external/glfw/include)
-set(GLFW_LIBRARY ${CMAKE_SOURCE_DIR}/external/glfw/lib-vc2022/glfw3.lib)
+# GLFW - Platform specific
+if(WIN32)
+    set(GLFW_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/external/glfw/include)
+    set(GLFW_LIBRARY ${CMAKE_SOURCE_DIR}/external/glfw/lib-vc2022/glfw3.lib)
+elseif(APPLE)
+    set(GLFW_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/external/glfw/include)
+    set(GLFW_LIBRARY ${CMAKE_SOURCE_DIR}/external/glfw/lib-macos-arm64/libglfw3.a)
+endif()
+
 
 # IMGUI
 add_library(imgui STATIC
@@ -58,13 +64,25 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     ${GLFW_INCLUDE_DIR}
 )
 
-# Link libraries
-target_link_libraries(${PROJECT_NAME}
-    glad
-    ${GLFW_LIBRARY}
-    imgui
-    opengl32
-)
+# Link libraries - Platform specific
+if(WIN32)
+    target_link_libraries(${PROJECT_NAME}
+        glad
+        ${GLFW_LIBRARY}
+        imgui
+        opengl32
+    )
+elseif(APPLE)
+    target_link_libraries(${PROJECT_NAME}
+        glad
+        ${GLFW_LIBRARY}
+        imgui
+        "-framework OpenGL"
+        "-framework Cocoa"
+        "-framework IOKit"
+        "-framework CoreVideo"
+    )
+endif()
 
 # Copy shader files to build directory
 add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
